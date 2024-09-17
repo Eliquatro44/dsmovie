@@ -1,6 +1,6 @@
 import '../Form/styles.css'
 
-function Form () {
+function Form() {
 
     const movie = {
         id: 1,
@@ -10,9 +10,11 @@ function Form () {
         score: 4.5
     };
 
-    return (
-        <div className="dsmovie-form-container">
-    <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
+
+
+return (
+    <div className="dsmovie-form-container">
+    <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.image} />
     <div className="dsmovie-card-bottom-container">
         <h3>{movie.title}</h3>
         <form className="dsmovie-form">
@@ -37,7 +39,7 @@ function Form () {
         <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
     </div >
 </div >
-    );
+);
 }
 
 export default Form;
