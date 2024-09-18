@@ -1,27 +1,3 @@
--- Criação da tabela tb_score
-
-CREATE TABLE tb_user (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE
-);
-
-CREATE TABLE tb_movie (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    score DOUBLE,
-    count INT,
-    title VARCHAR(255) NOT NULL,
-    image VARCHAR(255)
-);
-
-CREATE TABLE tb_score (
-    movie_id BIGINT,
-    user_id BIGINT,
-    value DOUBLE,
-    PRIMARY KEY (movie_id, user_id),
-    FOREIGN KEY (movie_id) REFERENCES tb_movie(id),
-    FOREIGN KEY (user_id) REFERENCES tb_user(id)
-);
-
 INSERT INTO tb_user(email) VALUES ('maria@gmail.com');
 INSERT INTO tb_user(email) VALUES ('joao@gmail.com');
 INSERT INTO tb_user(email) VALUES ('ana@gmail.com');
