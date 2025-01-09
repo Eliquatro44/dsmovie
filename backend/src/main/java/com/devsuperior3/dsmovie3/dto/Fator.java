@@ -1,6 +1,5 @@
-package com.devsuperior3.dsmovie3.dto;
+/*package com.devsuperior3.dsmovie3.dto;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,57 +11,15 @@ import com.devsuperior3.dsmovie3.repositories.ScoreRepository;
 import com.devsuperior3.dsmovie3.repositories.UserRepository;
 
 
-
-
-public class ScoreDTO {
-    private Long movieId; // Corrigido de moiveId para movieId
-    private String email;
-    private Double score;
-
-    public ScoreDTO() {
-    }
-
-    public Long getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Double getScore() {
-        return score;
-    }
-
-    public void setScore(Double score) {
-        this.score = score;
-    }
-}
-
-
-@Service
 public class MovieService {
 
-    @Autowired
     private MovieRepository movieRepository;
-
-    @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private ScoreRepository scoreRepository;
 
     // Definindo o método saveScore
     @Transactional
-    public MovieDTO saveScore(ScoreDTO dto) {
+    public MovieDTO saveScore(ScoreDT dto) {
         User user = userRepository.findByEmail(dto.getEmail());
         if (user == null) {
             user = new User();
@@ -91,6 +48,45 @@ public class MovieService {
 
         return new MovieDTO(movie);
     }
+    
 }
+    */
+/*
+
+	public class ScoreDTO {
+	    private Long movieId; // Corrigido de moiveId para movieId
+	    private String email;
+	    private Double score;
+
+	    public ScoreDTO() {
+	    }
+
+	    public Long getMovieId() {
+	        return movieId;
+	    }
+
+	    public void setMovieId(Long movieId) {
+	        this.movieId = movieId;
+	    }
+
+	    public String getEmail() {
+	        return email;
+	    }
+
+	    public void setEmail(String email) {
+	        this.email = email;
+	    }
+
+	    public Double getScore() {
+	        return score;
+	    }
+
+	    public void setScore(Double score) {
+	        this.score = score;
+	    }
+	}
+
+*/
+package com.devsuperior3.dsmovie3.dto;
 
 

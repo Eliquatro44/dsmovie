@@ -10,6 +10,7 @@ public class MovieDTO {
 	private Integer count;
 	private String image;
 	
+	
 	public MovieDTO() {
 		
 	}
