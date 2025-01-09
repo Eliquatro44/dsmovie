@@ -18,6 +18,10 @@ public class ScorePK implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    
+    public ScorePK( ) {
+    	
+    }
 
     // Getters and Setters
     public Movie getMovie() {

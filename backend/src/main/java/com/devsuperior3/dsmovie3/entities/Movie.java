@@ -1,6 +1,7 @@
 package com.devsuperior3.dsmovie3.entities;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import jakarta.persistence.Entity;

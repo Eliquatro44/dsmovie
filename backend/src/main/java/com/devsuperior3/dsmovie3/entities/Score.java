@@ -2,6 +2,8 @@ package com.devsuperior3.dsmovie3.entities;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -10,6 +12,7 @@ public class Score {
 
     @EmbeddedId
     private ScorePK id = new ScorePK();
+    
     private Double value;
 
     public Score() {

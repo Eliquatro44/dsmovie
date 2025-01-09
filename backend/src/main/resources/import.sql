@@ -34,6 +34,15 @@ INSERT INTO tb_movie(score, count, title, image) VALUES (0, 0, 'Contato', 'https
 INSERT INTO tb_movie(score, count, title, image) VALUES (0, 0, 'Duna', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jYEW5xZkZk2WTrdbMGAPFuBqbDc.jpg');
 INSERT INTO tb_movie(score, count, title, image) VALUES (0, 0, 'Aquaman', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/2cUsDz4TzFYHrKktT1bKHHQ7Cgm.jpg');
 
+CREATE TABLE tb_score (
+    movie_id BIGINT,
+    user_id BIGINT,
+    value DECIMAL(10, 2),
+    PRIMARY KEY (movie_id, user_id),
+    FOREIGN KEY (movie_id) REFERENCES TB_Movie(id),
+    FOREIGN KEY (user_id) REFERENCES TB_User(id)
+);
+
 INSERT INTO tb_score(movie_id, user_id, value) VALUES (1, 1, 5.0);
 INSERT INTO tb_score(movie_id, user_id, value) VALUES (1, 2, 4.0);
 INSERT INTO tb_score(movie_id, user_id, value) VALUES (2, 1, 3.0);
