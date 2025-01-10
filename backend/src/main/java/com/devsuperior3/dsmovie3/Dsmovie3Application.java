@@ -9,3 +9,5 @@ public class Dsmovie3Application {
         SpringApplication.run(Dsmovie3Application.class, args);
     }
 }
+
+// url   === jdbc:h2:mem:testdb

@@ -1,5 +1,7 @@
 package com.devsuperior3.dsmovie3.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,10 +25,27 @@ public class MovieService {
 	@Autowired
 	private MovieRepository repository;
 
+	@Transactional(readOnly = true)
 	public Page<MovieDTO> findAll(Pageable pageable) {
-		return repository.findAll(pageable).map(movie -> new MovieDTO(movie));
+		Page<Movie> result = repository.findAll(pageable);
+		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
+		return page;
 	}
 	
+	/*
+	public Page<MovieDTO> findAll(Pageable pageable) {
+		return repository.findAll(pageable).map(movie -> new MovieDTO(movie));
+	}*/
+	
+	/*
+	@Transactional(readOnly = true)
+	public Page<movieDTO> findAll(Pageable pageable){
+		Page<Movie> result = repository.findAll(pageable);
+		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
+		return page;
+	} */
+	
+
     public MovieDTO findById(Long id) {
         // Busca o filme no repositório usando o ID
         Movie movie = repository.findById(id).orElseThrow(() -> 
